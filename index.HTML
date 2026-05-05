@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="SouthNest — Trusted, DBS-checked University of Southampton student babysitters. Book online from £16/hr. Evenings, weekends and school holidays across Southampton."/>
+<meta name="keywords" content="babysitter Southampton, babysitting Southampton, student sitters, DBS checked, childcare Southampton"/>
+<meta property="og:title" content="SouthNest — Trusted Student Sitters, Southampton"/>
+<meta property="og:description" content="Vetted University of Southampton students available for babysitting from £16/hr. DBS checked, safeguarding trained, locally reviewed."/>
+<meta property="og:url" content="https://southnest.uk"/>
+<title>SouthNest — Trusted Student Sitters · Southampton</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --forest:      #2B5040;
+  --forest-dark: #1C2B22;
+  --amber:       #D4863A;
+  --amber-light: #e89a50;
+  --cream:       #F5EFE0;
+  --cream-mid:   #EDE4CC;
+  --sage:        #7FA888;
+  --honey:       #EDD9A3;
+  --muted:       #8A9E91;
+  --dark:        #1C2B22;
+  --white:       #FDFAF4;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,134,58,.4)}70%{box-shadow:0 0 0 12px rgba(212,134,58,0)}100%{box-shadow:0 0 0 0 rgba(212,134,58,0)}}
+.fu{animation:fadeUp .7s ease both}
+.fu2{animation:fadeUp .7s .15s ease both}
+.fu3{animation:fadeUp .7s .3s ease both}
+.fu4{animation:fadeUp .7s .45s ease both}
+.fi{animation:fadeIn 1.2s ease both}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(245,239,224,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,80,64,.07);transition:all .3s}
+nav.scrolled{padding:12px 48px;background:rgba(245,239,224,.97);box-shadow:0 4px 24px rgba(28,43,34,.07)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--forest);letter-spacing:-.02em}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:13px;font-weight:700;color:var(--forest);text-decoration:none;opacity:.7;transition:opacity .2s;letter-spacing:.01em}
+.nav-links a:hover{opacity:1}
+.nav-cta{background:var(--forest)!important;color:var(--cream)!important;opacity:1!important;padding:10px 22px;border-radius:50px;transition:background .2s,transform .2s!important}
+.nav-cta:hover{background:var(--amber)!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--forest);border-radius:2px;transition:all .3s}
+.mob-menu{display:none;flex-direction:column;gap:0;position:fixed;top:64px;left:0;right:0;background:var(--cream);border-bottom:1px solid rgba(43,80,64,.1);z-index:899;padding:8px 0}
+.mob-menu a{display:block;padding:14px 28px;font-size:15px;font-weight:700;color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(43,80,64,.06)}
+.mob-menu a:last-child{border:none;margin:12px 20px;background:var(--forest);color:var(--cream);text-align:center;border-radius:50px;padding:14px}
+.mob-menu.open{display:flex}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 48px 80px;gap:60px;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+.hero-orb-1{width:560px;height:560px;right:-80px;top:-80px;background:radial-gradient(circle,rgba(43,80,64,.07) 0%,transparent 70%)}
+.hero-orb-2{width:380px;height:380px;left:-60px;bottom:-60px;background:radial-gradient(circle,rgba(212,134,58,.06) 0%,transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(43,80,64,.08);border:1px solid rgba(43,80,64,.15);border-radius:50px;padding:8px 16px;margin-bottom:24px;font-size:12px;font-weight:800;color:var(--forest);text-transform:uppercase;letter-spacing:.1em}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5.5vw,70px);font-weight:700;line-height:1.04;color:var(--forest-dark);margin-bottom:22px;letter-spacing:-.03em}
+.hero h1 em{color:var(--amber);font-style:italic}
+.hero p{font-size:16px;line-height:1.75;color:#4a6355;margin-bottom:34px;font-weight:500;max-width:450px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--forest);color:var(--cream);padding:15px 30px;border-radius:50px;font-size:15px;font-weight:800;text-decoration:none;transition:all .25s;border:none;cursor:pointer;letter-spacing:.01em;display:inline-flex;align-items:center;gap:7px;font-family:'Nunito',sans-serif}
+.btn-primary:hover{background:var(--amber);transform:translateY(-2px);box-shadow:0 8px 26px rgba(212,134,58,.35)}
+.btn-outline{background:transparent;color:var(--forest);padding:15px 26px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;border:2px solid rgba(43,80,64,.25);transition:all .25s}
+.btn-outline:hover{border-color:var(--forest);background:rgba(43,80,64,.05)}
+.hero-visual{display:flex;justify-content:center;align-items:center;animation:float 6s ease-in-out infinite}
+.hero-card{background:var(--forest);border-radius:28px;padding:34px;width:310px;box-shadow:0 32px 80px rgba(28,43,34,.22);position:relative}
+.hero-card-icon{font-size:44px;margin-bottom:14px}
+.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:10px}
+.hero-card-sub{font-size:13px;color:var(--sage);font-weight:600;line-height:1.6;margin-bottom:18px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hero-stat{background:rgba(255,255,255,.07);border-radius:14px;padding:12px;text-align:center}
+.hero-stat-n{font-size:22px;font-weight:900;color:var(--honey);font-family:'Cormorant Garamond',serif}
+.hero-stat-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:2px}
+.hero-float{position:absolute;background:var(--cream);border-radius:14px;padding:10px 14px;box-shadow:0 8px 28px rgba(0,0,0,.12);font-size:12px;font-weight:700;color:var(--forest);display:flex;align-items:center;gap:6px}
+.hero-float-1{top:-14px;right:-18px}
+.hero-float-2{bottom:-14px;left:-18px}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--forest-dark);padding:18px 48px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:9px;color:var(--honey);font-size:13px;font-weight:700}
+.trust-div{width:1px;height:18px;background:rgba(255,255,255,.1)}
+
+/* ── SECTIONS ── */
+section{padding:96px 48px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;color:var(--amber);text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
+.section-label::before{content:'';width:18px;height:2px;background:var(--amber);border-radius:2px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);font-weight:700;line-height:1.1;color:var(--forest-dark);letter-spacing:-.02em;margin-bottom:18px}
+.section-sub{font-size:16px;color:#4a6355;line-height:1.7;font-weight:500;max-width:500px}
+
+/* ── HOW IT WORKS ── */
+.how-sec{background:var(--white)}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.how-card{background:var(--cream);border-radius:22px;padding:34px 28px;position:relative;border:1px solid rgba(43,80,64,.08);transition:transform .3s,box-shadow .3s}
+.how-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(28,43,34,.1)}
+.how-num{position:absolute;top:-16px;left:28px;width:34px;height:34px;border-radius:50%;background:var(--amber);color:#fff;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(212,134,58,.4)}
+.how-icon{font-size:34px;margin-bottom:14px;margin-top:6px}
+.how-card h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--forest-dark);margin-bottom:9px}
+.how-card p{font-size:14px;color:#4a6355;line-height:1.7;font-weight:500}
+
+/* ── WHY US ── */
+.why-sec{background:var(--forest)}
+.why-sec .section-title{color:var(--cream)}
+.why-sec .section-sub{color:var(--sage)}
+.why-sec .section-label{color:var(--honey)}
+.why-sec .section-label::before{background:var(--honey)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:56px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:26px;transition:background .25s}
+.why-card:hover{background:rgba(255,255,255,.09)}
+.why-icon{font-size:28px;margin-bottom:12px}
+.why-card h3{font-size:15px;font-weight:800;color:var(--cream);margin-bottom:7px}
+.why-card p{font-size:13px;color:var(--sage);line-height:1.65}
+
+/* ── SITTERS ── */
+.sitters-sec{background:var(--cream)}
+.sitters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.sitter-card{background:var(--white);border-radius:22px;overflow:hidden;border:1px solid rgba(43,80,64,.08);transition:transform .3s,box-shadow .3s}
+.sitter-card:hover{transform:translateY(-5px);box-shadow:0 20px 46px rgba(28,43,34,.12)}
+.sitter-ava{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:60px}
+.sitter-body{padding:22px}
+.sitter-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--forest-dark);margin-bottom:3px}
+.sitter-course{font-size:11px;font-weight:800;color:var(--amber);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.sitter-bio{font-size:13px;color:#4a6355;line-height:1.65;margin-bottom:14px}
+.sitter-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.sitter-tag{background:rgba(43,80,64,.08);color:var(--forest);font-size:10px;font-weight:800;padding:3px 9px;border-radius:50px;text-transform:uppercase;letter-spacing:.05em}
+.sitter-dbs{display:flex;align-items:center;gap:5px;background:rgba(43,80,64,.05);border-radius:50px;padding:6px 11px;font-size:11px;font-weight:800;color:var(--forest)}
+
+/* ── PRICING ── */
+.pricing-sec{background:var(--white)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.p-card{background:var(--cream);border-radius:22px;padding:32px 26px;border:1px solid rgba(43,80,64,.08);position:relative;transition:transform .3s}
+.p-card:hover{transform:translateY(-4px)}
+.p-card.featured{background:var(--forest);border-color:transparent;box-shadow:0 24px 60px rgba(28,43,34,.22);transform:scale(1.03)}
+.p-card.featured:hover{transform:scale(1.03) translateY(-4px)}
+.p-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:#fff;font-size:10px;font-weight:900;padding:3px 13px;border-radius:50px;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
+.p-name{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px}
+.p-card.featured .p-name{color:var(--sage)}
+.p-price{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:700;color:var(--forest-dark);line-height:1;margin-bottom:4px}
+.p-card.featured .p-price{color:var(--cream)}
+.p-per{font-size:13px;color:var(--muted);margin-bottom:22px}
+.p-card.featured .p-per{color:var(--sage)}
+.p-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.p-list li{display:flex;gap:9px;font-size:13px;font-weight:600;color:var(--dark);align-items:flex-start}
+.p-card.featured .p-list li{color:rgba(245,239,224,.85)}
+.p-list li::before{content:'✓';color:var(--amber);font-weight:900;flex-shrink:0}
+.btn-p{display:block;text-align:center;text-decoration:none;padding:13px;border-radius:50px;font-size:14px;font-weight:800;transition:all .25s;border:2px solid var(--forest);color:var(--forest);background:transparent;cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-p:hover{background:var(--forest);color:var(--cream)}
+.p-card.featured .btn-p{background:var(--amber);border-color:var(--amber);color:#fff}
+.p-card.featured .btn-p:hover{background:var(--amber-light);border-color:var(--amber-light)}
+
+/* ── TESTIMONIALS ── */
+.testi-sec{background:var(--cream)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.testi-card{background:var(--white);border-radius:20px;padding:26px;border:1px solid rgba(43,80,64,.07);transition:transform .3s}
+.testi-card:hover{transform:translateY(-4px)}
+.testi-stars{color:var(--amber);font-size:15px;margin-bottom:12px;letter-spacing:2px}
+.testi-text{font-size:14px;color:var(--dark);line-height:1.7;font-weight:500;margin-bottom:18px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-ava{width:38px;height:38px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:18px}
+.testi-name{font-size:14px;font-weight:800;color:var(--forest)}
+.testi-loc{font-size:11px;color:var(--muted);font-weight:600}
+
+/* ── BOOKING ── */
+.book-sec{background:var(--forest-dark);position:relative;overflow:hidden}
+.book-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(212,134,58,.08) 0%,transparent 60%);pointer-events:none}
+.book-sec .section-title{color:var(--cream)}
+.book-sec .section-sub{color:var(--sage)}
+.book-sec .section-label{color:var(--honey)}
+.book-sec .section-label::before{background:var(--honey)}
+.book-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
+.book-perks{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.book-perk{display:flex;gap:12px;align-items:flex-start}
+.book-perk-icon{width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.book-perk h4{font-size:14px;font-weight:800;color:var(--cream);margin-bottom:2px}
+.book-perk p{font-size:12px;color:var(--sage);line-height:1.5}
+.book-form{background:var(--cream);border-radius:26px;padding:38px}
+.book-form h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--forest-dark);margin-bottom:26px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:11px;font-weight:800;color:var(--forest);text-transform:uppercase;letter-spacing:.09em}
+.form-group input,.form-group select,.form-group textarea{padding:12px 15px;border-radius:11px;border:1.5px solid rgba(43,80,64,.16);background:var(--white);font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--dark);transition:border-color .2s,box-shadow .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--forest);box-shadow:0 0 0 3px rgba(43,80,64,.09)}
+.form-group textarea{resize:vertical;min-height:88px}
+.form-req{color:var(--amber)}
+.form-submit{width:100%;padding:15px;border-radius:50px;background:var(--forest);color:var(--cream);font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;border:none;cursor:pointer;transition:all .25s;margin-top:6px;letter-spacing:.02em}
+.form-submit:hover{background:var(--amber);transform:translateY(-1px);box-shadow:0 8px 26px rgba(212,134,58,.4)}
+.form-note{text-align:center;font-size:11px;color:var(--muted);margin-top:10px}
+
+/* ── SITTER CTA ── */
+.sitter-cta{background:linear-gradient(135deg,var(--amber) 0%,#c4732a 100%);padding:76px 48px;text-align:center}
+.sitter-cta h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.02em}
+.sitter-cta p{font-size:16px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:30px;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-white{background:#fff;color:var(--amber);padding:15px 34px;border-radius:50px;font-size:15px;font-weight:800;text-decoration:none;transition:all .25s;display:inline-block}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,0,0,.14)}
+
+/* ── FOOTER ── */
+footer{background:var(--forest-dark);padding:56px 48px 36px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:9px;margin-top:8px}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:250px}
+.footer-col h4{font-size:10px;font-weight:800;color:var(--honey);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .2s;font-weight:600}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-copy{font-size:12px;color:var(--muted)}
+.footer-dbs{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border-radius:50px;padding:7px 14px;font-size:11px;font-weight:700;color:var(--sage)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--forest);color:var(--cream);padding:14px 22px;border-radius:14px;font-size:14px;font-weight:700;box-shadow:0 8px 30px rgba(28,43,34,.28);transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(.175,.885,.32,1.275);display:flex;align-items:center;gap:9px}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-btn{position:fixed;bottom:28px;left:28px;z-index:888;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:transform .25s}
+.wa-btn:hover{transform:scale(1.1)}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  nav{padding:15px 20px}
+  nav.scrolled{padding:11px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{grid-template-columns:1fr;padding:100px 22px 56px;gap:44px;text-align:center}
+  .hero-visual{order:-1}
+  .hero-card{width:270px}
+  .hero-btns{justify-content:center}
+  .hero p{margin:0 auto 32px}
+  .trust-bar{padding:14px 20px;gap:14px}
+  .trust-div{display:none}
+  section{padding:60px 22px}
+  .how-grid,.why-grid,.sitters-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr}
+  .p-card.featured{transform:none}
+  .book-inner{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .sitter-cta{padding:60px 22px}
+  footer{padding:44px 22px 28px}
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-btn" href="https://wa.me/447700900000" target="_blank" rel="noopener" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.934 1.395 5.608L0 24l6.562-1.374A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.373l-.36-.214-3.724.977.995-3.63-.235-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 80 80" fill="none">
+      <path d="M10 52 Q20 42 30 50 Q40 58 50 50 Q60 42 70 52" stroke="#2B5040" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+      <path d="M14 58 Q24 48 34 56 Q40 61 46 56 Q56 48 66 58" stroke="#2B5040" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.65"/>
+      <path d="M18 64 Q28 56 38 60 Q40 62 42 60 Q52 56 62 64" stroke="#2B5040" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <path d="M40 20 L28 32 L52 32 Z" fill="#D4863A" opacity="0.92"/>
+      <rect x="30" y="32" width="20" height="16" rx="1.5" fill="#2B5040"/>
+      <rect x="37" y="38" width="6" height="10" rx="1" fill="#D4863A" opacity="0.82"/>
+    </svg>
+    <span class="nav-logo-text">SouthNest</span>
+  </a>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#sitters">Our sitters</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#book" class="nav-cta">Book a sitter</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#how" onclick="closeMenu()">How it works</a>
+  <a href="#sitters" onclick="closeMenu()">Our sitters</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#book" onclick="closeMenu()">Book a sitter →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge fu"><span class="hero-dot"></span>Now booking across Southampton</div>
+    <h1 class="fu2">Safe hands,<br/><em>local hearts.</em></h1>
+    <p class="fu3">Vetted University of Southampton students, available for evenings, weekends and school holidays. DBS‑checked, safeguarding‑trained, and reviewed by local parents — from just £16/hr.</p>
+    <div class="hero-btns fu4">
+      <a href="#book" class="btn-primary">Book a sitter →</a>
+      <a href="#how" class="btn-outline">How it works</a>
+    </div>
+  </div>
+  <div class="hero-visual fi">
+    <div style="position:relative">
+      <div class="hero-card">
+        <div class="hero-card-icon">🏠</div>
+        <div class="hero-card-title">Your child deserves the best care</div>
+        <div class="hero-card-sub">All sitters are DBS‑checked University of Southampton students</div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-n">100%</div><div class="hero-stat-l">DBS Checked</div></div>
+          <div class="hero-stat"><div class="hero-stat-n">£16</div><div class="hero-stat-l">From /hr</div></div>
+          <div class="hero-stat"><div class="hero-stat-n">SO</div><div class="hero-stat-l">Soton only</div></div>
+          <div class="hero-stat"><div class="hero-stat-n">5★</div><div class="hero-stat-l">Avg rating</div></div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-1">🔒 DBS Verified</div>
+      <div class="hero-float hero-float-2">🎓 Uni Students</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">🔒 Enhanced DBS Checked</div>
+  <div class="trust-div"></div>
+  <div class="trust-item">🎓 University of Southampton Students</div>
+  <div class="trust-div"></div>
+  <div class="trust-item">📍 Southampton Only</div>
+  <div class="trust-div"></div>
+  <div class="trust-item">⭐ Parent‑Reviewed Profiles</div>
+  <div class="trust-div"></div>
+  <div class="trust-item">🛡️ Fully Insured</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec" id="how">
+  <div class="section-label">Simple process</div>
+  <div class="section-title">Book your sitter<br/>in 3 simple steps</div>
+  <p class="section-sub">We've made the whole experience as easy as possible — from finding a sitter to the morning after.</p>
+  <div class="how-grid">
+    <div class="how-card reveal">
+      <div class="how-num">1</div>
+      <div class="how-icon">📋</div>
+      <h3>Tell us what you need</h3>
+      <p>Fill in our quick booking form — the date, time, number of children, and any special requirements. Takes less than 3 minutes.</p>
+    </div>
+    <div class="how-card reveal d1">
+      <div class="how-num">2</div>
+      <div class="how-icon">🤝</div>
+      <h3>We match you with a sitter</h3>
+      <p>We'll suggest an available, vetted sitter near you. You can view their profile and reviews before confirming — and meet them first, for free.</p>
+    </div>
+    <div class="how-card reveal d2">
+      <div class="how-num">3</div>
+      <div class="how-icon">🏠</div>
+      <h3>Relax — we've got it covered</h3>
+      <p>Your sitter arrives on time, ready to go. After the session, leave a quick review to help other Southampton families.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SOUTHNEST -->
+<section class="why-sec" id="why">
+  <div class="section-label">Why choose us</div>
+  <div class="section-title">Not just a sitter.<br/>A trusted local service.</div>
+  <p class="section-sub">We're not a national agency. We're students from your city who built something better.</p>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="why-icon">🔒</div><h3>Enhanced DBS Checked — Always</h3><p>Every sitter holds a current enhanced DBS certificate. No exceptions. You can request to see it at any time.</p></div>
+    <div class="why-card reveal d1"><div class="why-icon">🎓</div><h3>Educated & Responsible Sitters</h3><p>Many of our sitters study Nursing, Education, or Psychology at Southampton — giving you real confidence in who's at your door.</p></div>
+    <div class="why-card reveal"><div class="why-icon">📍</div><h3>Hyper‑Local to Southampton</h3><p>We only operate in Southampton. Our sitters know the area, arrive on time, and are part of your community.</p></div>
+    <div class="why-card reveal d1"><div class="why-icon">💷</div><h3>Genuinely Affordable</h3><p>From just £16/hr with no membership fees, no subscription, and no hidden charges. Pay only for the time you need.</p></div>
+    <div class="why-card reveal"><div class="why-icon">⭐</div><h3>Reviewed by Local Parents</h3><p>Every booking ends with a review. Read genuine feedback from other Southampton parents before you confirm.</p></div>
+    <div class="why-card reveal d1"><div class="why-icon">🛡️</div><h3>Fully Insured & Safeguarding Trained</h3><p>SouthNest holds public liability insurance and every sitter completes an NSPCC‑accredited safeguarding course before their first booking.</p></div>
+  </div>
+</section>
+
+<!-- SITTERS -->
+<section class="sitters-sec" id="sitters">
+  <div class="section-label">The team</div>
+  <div class="section-title">Meet some of our sitters</div>
+  <p class="section-sub">Every sitter is personally interviewed, DBS‑checked, and reviewed by parents just like you.</p>
+  <div class="sitters-grid">
+    <div class="sitter-card reveal">
+      <div class="sitter-ava" style="background:linear-gradient(135deg,#d4f0e0,#a8dfc0)">👩</div>
+      <div class="sitter-body">
+        <div class="sitter-name">Emily Clarke</div>
+        <div class="sitter-course">BSc Nursing · Year 2</div>
+        <div class="sitter-bio">Calm, patient, and great with young children. I've been babysitting for 4 years and love arts and crafts activities.</div>
+        <div class="sitter-tags"><span class="sitter-tag">Arts & crafts</span><span class="sitter-tag">0–5 yrs</span><span class="sitter-tag">First aid</span></div>
+        <div class="sitter-dbs">🔒 DBS Verified &nbsp;·&nbsp; ⭐ 5.0</div>
+      </div>
+    </div>
+    <div class="sitter-card reveal d1">
+      <div class="sitter-ava" style="background:linear-gradient(135deg,#fde8cc,#f5c98a)">👨</div>
+      <div class="sitter-body">
+        <div class="sitter-name">James Okafor</div>
+        <div class="sitter-course">BA Primary Education · Year 3</div>
+        <div class="sitter-bio">As a future primary teacher I love making homework feel like fun. Great with school‑age kids and sports activities.</div>
+        <div class="sitter-tags"><span class="sitter-tag">Homework help</span><span class="sitter-tag">5–12 yrs</span><span class="sitter-tag">Sports</span></div>
+        <div class="sitter-dbs">🔒 DBS Verified &nbsp;·&nbsp; ⭐ 5.0</div>
+      </div>
+    </div>
+    <div class="sitter-card reveal d2">
+      <div class="sitter-ava" style="background:linear-gradient(135deg,#e0d4f0,#c4a8e0)">👩</div>
+      <div class="sitter-body">
+        <div class="sitter-name">Sophie Wang</div>
+        <div class="sitter-course">BSc Psychology · Year 2</div>
+        <div class="sitter-bio">Bilingual in English and Mandarin, with SEN experience. I'm warm, reliable, and passionate about child wellbeing.</div>
+        <div class="sitter-tags"><span class="sitter-tag">Bilingual</span><span class="sitter-tag">All ages</span><span class="sitter-tag">SEN</span></div>
+        <div class="sitter-dbs">🔒 DBS Verified &nbsp;·&nbsp; ⭐ 4.9</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-sec" id="pricing">
+  <div class="section-label">Transparent pricing</div>
+  <div class="section-title">Simple, honest rates.<br/>No surprises.</div>
+  <p class="section-sub">No membership fees. No subscriptions. Pay only for the time you book.</p>
+  <div class="pricing-grid">
+    <div class="p-card reveal">
+      <div class="p-name">Standard</div>
+      <div class="p-price">£16<span style="font-size:18px">/hr</span></div>
+      <div class="p-per">Weekday evenings</div>
+      <ul class="p-list">
+        <li>DBS‑checked sitter</li>
+        <li>Review after every booking</li>
+        <li>Same sitter repeat bookings</li>
+        <li>Cancel 24hrs free</li>
+        <li>WhatsApp support</li>
+      </ul>
+      <a href="#book" class="btn-p">Book now</a>
+    </div>
+    <div class="p-card featured reveal d1">
+      <div class="p-badge">Most popular</div>
+      <div class="p-name">Weekend</div>
+      <div class="p-price">£17<span style="font-size:18px">/hr</span></div>
+      <div class="p-per">Friday, Saturday & Sunday</div>
+      <ul class="p-list">
+        <li>Everything in Standard</li>
+        <li>Priority sitter matching</li>
+        <li>Free pre‑meet first booking</li>
+        <li>Emergency same‑day option</li>
+        <li>Dedicated booking manager</li>
+      </ul>
+      <a href="#book" class="btn-p">Book now</a>
+    </div>
+    <div class="p-card reveal d2">
+      <div class="p-name">School Holidays</div>
+      <div class="p-price">£130<span style="font-size:18px">/day</span></div>
+      <div class="p-per">Full day (up to 8 hours)</div>
+      <ul class="p-list">
+        <li>Same trusted sitter all day</li>
+        <li>Activities & outdoor play</li>
+        <li>Homework & reading support</li>
+        <li>Meal preparation included</li>
+        <li>Daily check‑in for parents</li>
+      </ul>
+      <a href="#book" class="btn-p">Book now</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="reviews">
+  <div class="section-label">Parent reviews</div>
+  <div class="section-title">What Southampton<br/>families say</div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Emily was absolutely brilliant with our two boys. She arrived on time, kept them entertained all evening and even tidied up before we got home. We've already booked her again."</div>
+      <div class="testi-author"><div class="testi-ava">👩‍👦</div><div><div class="testi-name">Sarah M.</div><div class="testi-loc">Portswood, Southampton</div></div></div>
+    </div>
+    <div class="testi-card reveal d1">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"I was nervous using a new service but SouthNest made it so easy. I could see the DBS certificate, read reviews, and had a quick call before the booking. Total peace of mind."</div>
+      <div class="testi-author"><div class="testi-ava">👨‍👧</div><div><div class="testi-name">Daniel K.</div><div class="testi-loc">Bitterne, Southampton</div></div></div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Much better value than agencies and honestly a better experience too. Sophie is wonderful with our daughter who has additional needs. She clearly knows what she's doing."</div>
+      <div class="testi-author"><div class="testi-ava">👩‍👧</div><div><div class="testi-name">Priya T.</div><div class="testi-loc">Bassett, Southampton</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="book-sec" id="book">
+  <div class="book-inner">
+    <div>
+      <div class="section-label">Book today</div>
+      <div class="section-title" style="font-size:clamp(30px,3.8vw,44px)">Ready to book<br/>your sitter?</div>
+      <p class="section-sub" style="margin-bottom:0">Fill in the form and we'll confirm your sitter within 2 hours. Every first booking includes a free pre‑meet.</p>
+      <div class="book-perks">
+        <div class="book-perk"><div class="book-perk-icon">⚡</div><div><h4>Confirmed within 2 hours</h4><p>We respond fast — no waiting days for a reply.</p></div></div>
+        <div class="book-perk"><div class="book-perk-icon">🤝</div><div><h4>Free pre‑meet with your sitter</h4><p>Every first booking includes a short intro call or visit.</p></div></div>
+        <div class="book-perk"><div class="book-perk-icon">🔄</div><div><h4>Free cancellation up to 24hrs</h4><p>Plans change. Cancel any time with no charge if 24+ hours before.</p></div></div>
+      </div>
+    </div>
+    <div class="book-form reveal">
+      <h3>Request a booking</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First name <span class="form-req">*</span></label><input type="text" placeholder="e.g. Sarah" required/></div>
+        <div class="form-group"><label>Last name <span class="form-req">*</span></label><input type="text" placeholder="e.g. Johnson" required/></div>
+      </div>
+      <div class="form-group"><label>Email address <span class="form-req">*</span></label><input type="email" placeholder="hello@email.com" required/></div>
+      <div class="form-group"><label>Mobile number <span class="form-req">*</span></label><input type="tel" placeholder="07700 000 000" required/></div>
+      <div class="form-row">
+        <div class="form-group"><label>Date needed <span class="form-req">*</span></label><input type="date" required/></div>
+        <div class="form-group"><label>Start time <span class="form-req">*</span></label><input type="time" required/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Number of children <span class="form-req">*</span></label>
+          <select required>
+            <option value="">— Select —</option>
+            <option>1 child</option><option>2 children</option><option>3 children</option><option>4+ children</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Hours needed <span class="form-req">*</span></label>
+          <select required>
+            <option value="">— Select —</option>
+            <option>2–3 hours</option><option>3–4 hours</option><option>4–5 hours</option><option>5+ hours</option><option>Full day</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Any special requirements?</label><textarea placeholder="Ages of children, allergies, medical conditions, SEN needs, or anything else we should know..."></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Request my sitter →</button>
+      <p class="form-note">🔒 Your details are kept private and never shared. We'll be in touch within 2 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SITTER CTA -->
+<div class="sitter-cta">
+  <h2>Are you a Southampton student?</h2>
+  <p>Earn £12.50–14.00/hr around your lectures. Flexible hours, great experience, and you'll make a real difference to local families.</p>
+  <a href="mailto:hello@southnest.uk?subject=Sitter application" class="btn-white">Apply to become a sitter →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg width="34" height="34" viewBox="0 0 80 80" fill="none"><path d="M10 52 Q20 42 30 50 Q40 58 50 50 Q60 42 70 52" stroke="#F5EFE0" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M14 58 Q24 48 34 56 Q40 61 46 56 Q56 48 66 58" stroke="#F5EFE0" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.65"/><path d="M40 20 L28 32 L52 32 Z" fill="#D4863A" opacity="0.92"/><rect x="30" y="32" width="20" height="16" rx="1.5" fill="#F5EFE0"/><rect x="37" y="38" width="6" height="10" rx="1" fill="#D4863A" opacity="0.82"/></svg>
+      </div>
+      <div class="footer-brand">SouthNest</div>
+      <div class="footer-desc">Trusted, DBS‑checked University of Southampton student sitters available across Southampton. Safe hands, local hearts.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#pricing">Evening babysitting</a>
+      <a href="#pricing">Weekend sitting</a>
+      <a href="#pricing">School holiday care</a>
+      <a href="#sitters">Meet the sitters</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#how">How it works</a>
+      <a href="#why">Why SouthNest</a>
+      <a href="#reviews">Reviews</a>
+      <a href="mailto:hello@southnest.uk">Contact us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:hello@southnest.uk">hello@southnest.uk</a>
+      <a href="https://wa.me/447700900000">WhatsApp us</a>
+      <a href="https://instagram.com/southnest" target="_blank">Instagram</a>
+      <a href="https://facebook.com/southnest" target="_blank">Facebook</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 SouthNest. All rights reserved. Southampton, UK.</div>
+    <div class="footer-dbs">🔒 All sitters Enhanced DBS Checked · Fully Insured</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Booking request received! We'll be in touch within 2 hours.</div>
+
+<script>
+// ── NAVBAR SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  const m = document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobMenu').classList.remove('open');
+}
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobMenu');
+  const ham  = document.querySelector('.hamburger');
+  if (!menu.contains(e.target) && !ham.contains(e.target)) menu.classList.remove('open');
+});
+
+// ── FORM SUBMIT ──
+function submitForm() {
+  // Validate required fields
+  const required = document.querySelectorAll('#book input[required], #book select[required]');
+  let valid = true;
+  required.forEach(el => {
+    if (!el.value) { el.style.borderColor = '#e05'; valid = false; setTimeout(() => el.style.borderColor = '', 3000); }
+  });
+  if (!valid) return;
+  // Send to email (swap this for Formspree endpoint in production)
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4500);
+  // Optionally: window.location.href = 'mailto:hello@southnest.uk?subject=New booking request';
+}
+
+// ── SMOOTH ANCHOR OFFSET (account for fixed nav) ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
